@@ -1,7 +1,7 @@
 package job
 
 import (
-	"github.com/staori/go.uuid"
+	"github.com/satori/go.uuid"
 )
 
 // Job represents a discrete set of computations submitted by a user to be executed by a miner

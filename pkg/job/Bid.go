@@ -1,7 +1,7 @@
 package job
 
 import (
-	"github.com/staori/go.uuid"
+	"github.com/satori/go.uuid"
 )
 
 // Bid represents a minimum price or rate a miner is willing to accept to execute a job
