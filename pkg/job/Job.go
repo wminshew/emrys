@@ -6,6 +6,7 @@ import (
 
 // Job represents a discrete set of computations submitted by a user to be executed by a miner
 type Job struct {
-	ID     uuid.UUID
-	UserID uuid.UUID
+	ID      uuid.UUID
+	UserID  uuid.UUID
+	PayRate float64
 }
