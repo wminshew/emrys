@@ -6,9 +6,9 @@ import (
 
 // Job represents a discrete set of computations submitted by a user to be executed by a miner
 type Job struct {
-	ID       uuid.UUID
-	UserID   uuid.UUID
-	WinBidID uuid.UUID
-	PayRate  float64
-	Token    string
+	ID       uuid.UUID `json:"id,omitempty"`
+	UserID   uuid.UUID `json:"userId,omitempty"`
+	WinBidID uuid.UUID `json:"winBidId,omitempty"`
+	PayRate  float64   `json:"payRate,omitempty"`
+	Token    string    `json:"token,omitempty"`
 }
