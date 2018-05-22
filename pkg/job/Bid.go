@@ -10,4 +10,5 @@ type Bid struct {
 	JobID   uuid.UUID `json:"jobId,omitempty"`
 	MinerID uuid.UUID `json:"minerId,omitempty"`
 	MinRate float64   `json:"minRate,omitempty"`
+	Late    bool      `json:"late,omitempty"`
 }
