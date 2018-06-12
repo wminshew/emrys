@@ -14,20 +14,20 @@ func ReadJSON(r io.Reader) error {
 	dec := json.NewDecoder(r)
 	for dec.More() {
 		if err := dec.Decode(&stream); err != nil {
-			return fmt.Errorf("error decoding json stream: %v", err)
+			return fmt.Errorf("Error decoding json stream: %v", err)
 		}
 		for k, v := range stream {
 			if k == "error" {
-				break
+				return fmt.Errorf("%v", v)
 			} else if k == "stream" {
 				log.Printf("%v", v)
 			} else {
 				log.Printf("%v: %v\n", k, v)
 			}
 		}
-		if err, ok := stream["error"]; ok {
-			return fmt.Errorf("%v", err)
-		}
+		// if err, ok := stream["error"]; ok {
+		// 	return fmt.Errorf("%v", err)
+		// }
 	}
 	return nil
 }
