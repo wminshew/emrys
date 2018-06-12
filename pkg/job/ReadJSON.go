@@ -17,7 +17,9 @@ func ReadJSON(r io.Reader) error {
 			return fmt.Errorf("error decoding json stream: %v", err)
 		}
 		for k, v := range stream {
-			if k == "stream" {
+			if k == "error" {
+				break
+			} else if k == "stream" {
 				log.Printf("%v", v)
 			} else {
 				log.Printf("%v: %v\n", k, v)
