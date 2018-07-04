@@ -25,9 +25,6 @@ func ReadJSON(r io.Reader) error {
 				log.Printf("%v: %v\n", k, v)
 			}
 		}
-		// if err, ok := stream["error"]; ok {
-		// 	return fmt.Errorf("%v", err)
-		// }
 	}
 	return nil
 }

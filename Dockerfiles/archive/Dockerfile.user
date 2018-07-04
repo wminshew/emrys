@@ -1,0 +1,20 @@
+FROM wminshew/emrys:cuda9.0-base-ubuntu16.04
+LABEL maintainer="William Minshew <w@emrys.io>"
+
+ARG HOME
+RUN useradd --create-home --home-dir $HOME user \
+  && chown -R user:user $HOME
+
+WORKDIR $HOME
+USER user
+
+RUN virtualenv venv
+ARG REQUIREMENTS
+COPY --chown=user:user $REQUIREMENTS $REQUIREMENTS
+RUN venv/bin/pip install -r $REQUIREMENTS
+RUN rm -rf $HOME/.cache/pip
+
+ARG MAIN
+ENV MAIN $MAIN
+COPY --chown=user:user $MAIN $MAIN
+CMD venv/bin/python $MAIN
