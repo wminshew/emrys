@@ -10,5 +10,4 @@ type Job struct {
 	UserID   uuid.UUID `json:"userId,omitempty"`
 	WinBidID uuid.UUID `json:"winBidId,omitempty"`
 	PayRate  float64   `json:"payRate,omitempty"`
-	Token    string    `json:"token,omitempty"`
 }
