@@ -29,9 +29,9 @@ RUN apt-get update && \
 
 RUN pip3 install virtualenv
 # RUN virtualenv venv
-# ARG REQUIREMENTS
-# COPY $REQUIREMENTS $REQUIREMENTS
-# RUN ./venv/bin/pip install -r $REQUIREMENTS
+# ARG REQS
+# COPY $REQS $REQS
+# RUN ./venv/bin/pip install -r $REQS
 
 # FROM nvidia/cuda:9.0-base-ubuntu16.04 as runtime
 # LABEL maintainer="William Minshew <w@emrys.io>"
@@ -49,9 +49,9 @@ RUN useradd --create-home --home-dir $HOME user \
 WORKDIR $HOME
 # COPY --from=base --chown=user:user /venv ./venv
 RUN virtualenv venv
-ARG REQUIREMENTS
-COPY $REQUIREMENTS $REQUIREMENTS
-RUN ./venv/bin/pip --no-cache-dir install -r $REQUIREMENTS
+ARG REQS
+COPY $REQS $REQS
+RUN ./venv/bin/pip --no-cache-dir install -r $REQS
 USER user
 
 ARG MAIN
