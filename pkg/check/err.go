@@ -5,10 +5,9 @@ import (
 	"log"
 )
 
-// Err checks if deferredFunc throws an error and sets err if it hasn't already been set
-func Err(deferredFunc func() error) {
-	// func Err(deferredFunc func() error, err *error) {
-	if err := deferredFunc(); err != nil {
-		log.Printf("Error in deferred function: %v\n", err)
+// Err logs if deferredFunc throws an error; primarily used for deferred funcs
+func Err(errorFunc func() error) {
+	if err := errorFunc(); err != nil {
+		log.Printf("check.Err: %v\n", err)
 	}
 }
