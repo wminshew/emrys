@@ -6,8 +6,9 @@ import (
 
 // DeviceSnapshot holds data collected about the mining GPU
 type DeviceSnapshot struct {
-	ID                uuid.UUID `json:id,omitempty`
+	ID                uuid.UUID `json:"id,omitempty"`
 	TimeStamp         int64     `json:"timestamp,omitempty"`
+	Active            bool      `json:"busy,omitempty"`
 	MinorNumber       uint      `json:"minornumber,omitempty"`
 	Name              string    `json:"name,omitempty"`
 	Brand             uint      `json:"brand,omitempty"`
