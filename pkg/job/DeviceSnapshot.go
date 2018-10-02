@@ -17,6 +17,8 @@ type DeviceSnapshot struct {
 	PerformanceState  uint      `json:"pstate,omitempty"`
 	AvgGPUUtilization uint      `json:"avg_gpu_util,omitempty"`
 	AvgPowerUsage     uint      `json:"avg_power,omitempty"`
+	PowerLimit        uint      `json:"power_limit,omitempty"`
+	DefaultPowerLimit uint      `json:"default_power_limit,omitempty"`
 	TotalMemory       uint64    `json:"total_mem,omitempty"`
 	UsedMemory        uint64    `json:"used_mem,omitempty"`
 	GrClock           uint      `json:"gr_clock,omitempty"`
