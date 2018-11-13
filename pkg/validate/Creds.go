@@ -6,7 +6,7 @@ import (
 
 const (
 	emailRegexp    = "@"
-	passwordRegexp = "[A-Za-z0-9]{8, 30}"
+	passwordRegexp = "^[A-Za-z0-9]{8, 30}$"
 )
 
 // EmailRegexp returns the regexp to validate email strings on the server
