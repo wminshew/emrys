@@ -1,7 +1,7 @@
 package job
 
-// Specs represents a discrete set of specifications for a job
-type Specs struct {
+// Requirements represents a discrete set of specifications for a job
+type Requirements struct {
 	Rate float64 `json:"rate,omitempty"`
 	GPU  string  `json:"gpu,omitempty"`
 	RAM  uint64  `json:"ram,omitempty"`
