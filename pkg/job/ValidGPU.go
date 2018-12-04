@@ -1,6 +1,7 @@
 package job
 
 import (
+	"fmt"
 	"strings"
 )
 
@@ -57,4 +58,32 @@ func ValidateGPU(input string) (string, bool) {
 	s := strings.ToLower(strings.Replace(input, " ", "", -1))
 	validString, ok := validGPU[s]
 	return validString, ok
+}
+
+// CompareGPU returns true if gpuA is better than or equal to gpuB
+func CompareGPU(gpuA, gpuB string) (bool, error) {
+	validA, ok := ValidateGPU(gpuA)
+	if !ok {
+		return false, fmt.Errorf("invalid gpu: %s", gpuA)
+	}
+	validB, ok := ValidateGPU(gpuB)
+	if !ok {
+		return false, fmt.Errorf("invalid gpu: %s", gpuB)
+	}
+	return compareGPU[validA] >= compareGPU[validB], nil
+}
+
+// gpu rankings, loosely based on
+// https://browser.geekbench.com/cuda-benchmarks
+var compareGPU = map[string]int{
+	teslaV100:     100,
+	nvidiaTitanV:  90,
+	teslaP100:     80,
+	nvidiaTitanXp: 60,
+	nvidiaTitanX:  50,
+	gtx1080ti:     40,
+	gtx1080:       30,
+	gtx1070ti:     20,
+	gtx1070:       10,
+	teslaK80:      0,
 }
