@@ -6,15 +6,10 @@ import (
 
 // Bid represents a minimum price or rate a miner is willing to accept to execute a job on a device
 type Bid struct {
-	ID                uuid.UUID `json:"id,omitempty"`
-	JobID             uuid.UUID `json:"jobId,omitempty"`
-	MinerID           uuid.UUID `json:"minerId,omitempty"`
-	DeviceID          uuid.UUID `json:"deviceId,omitempty"`
-	Rate              float64   `json:"rate,omitempty"`
-	Late              bool      `json:"late,omitempty"`
-	GPU               string    `json:"gpu,omitempty"`
-	RAM               string    `json:"ram,omitempty"`
-	Disk              string    `json:"disk,omitempty"`
-	Pcie              string    `json:"pcie,omitempty"`
-	MeetsRequirements bool      `json:"meetsRequirements,omitempty"`
+	ID       uuid.UUID `json:"id,omitempty"`
+	JobID    uuid.UUID `json:"jobId,omitempty"`
+	MinerID  uuid.UUID `json:"minerId,omitempty"`
+	DeviceID uuid.UUID `json:"deviceId,omitempty"`
+	Late     bool      `json:"late,omitempty"`
+	Specs    *Specs    `json:"specs,omitempty"`
 }
