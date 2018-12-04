@@ -12,6 +12,9 @@ const (
 	nvidiaTitanV  = "nvidia_titan_v"
 	nvidiaTitanXp = "nvidia_titan_xp"
 	nvidiaTitanX  = "nvidia_titan_x"
+	rtx2080ti     = "geforce_rtx_2080_ti"
+	rtx2080       = "geforce_rtx_2080"
+	rtx2070       = "geforce_rtx_2070"
 	gtx1080ti     = "geforce_gtx_1080_ti"
 	gtx1080       = "geforce_gtx_1080"
 	gtx1070ti     = "geforce_gtx_1070_ti"
@@ -31,14 +34,26 @@ var validGPU = map[string]string{
 	"k80":              teslaK80,
 	nvidiaTitanV:       nvidiaTitanV,
 	"nvidiatitanv":     nvidiaTitanV,
+	rtx2080ti:          rtx2080ti,
+	"geforcertx2080ti": rtx2080ti,
+	"rtx2080ti":        rtx2080ti,
+	"2080ti":           rtx2080ti,
 	nvidiaTitanXp:      nvidiaTitanXp,
 	"nvidiatitanxp":    nvidiaTitanXp,
 	nvidiaTitanX:       nvidiaTitanX,
 	"nvidiatitanx":     nvidiaTitanX,
+	rtx2080:            rtx2080,
+	"geforcertx2080":   rtx2080,
+	"rtx2080":          rtx2080,
+	"2080":             rtx2080,
 	gtx1080ti:          gtx1080ti,
 	"geforcegtx1080ti": gtx1080ti,
 	"gtx1080ti":        gtx1080ti,
 	"1080ti":           gtx1080ti,
+	rtx2070:            rtx2070,
+	"geforcertx2070":   rtx2070,
+	"rtx2070":          rtx2070,
+	"2070":             rtx2070,
 	gtx1080:            gtx1080,
 	"geforcegtx1080":   gtx1080,
 	"gtx1080":          gtx1080,
@@ -79,9 +94,12 @@ var compareGPU = map[string]int{
 	teslaV100:     100,
 	nvidiaTitanV:  90,
 	teslaP100:     80,
+	rtx2080ti:     75,
 	nvidiaTitanXp: 60,
 	nvidiaTitanX:  50,
+	rtx2080:       45,
 	gtx1080ti:     40,
+	rtx2070:       35,
 	gtx1080:       30,
 	gtx1070ti:     20,
 	gtx1070:       10,
