@@ -17,6 +17,7 @@ const (
 	gtx1070       = "geforce_gtx_1070"
 )
 
+// names sourced from https://developer.nvidia.com/cuda-gpus
 var validGPU = map[string]string{
 	"teslav100":        teslaV100,
 	"v100":             teslaV100,
