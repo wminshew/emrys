@@ -1,8 +1,36 @@
 package job
 
 import (
+	"docker.io/go-docker/api/types"
 	"github.com/satori/go.uuid"
+	"github.com/shirou/gopsutil/cpu"
+	"github.com/shirou/gopsutil/disk"
+	"github.com/shirou/gopsutil/mem"
 )
+
+// MinerStats represent the state of a miner to be monitored by the server
+type MinerStats struct {
+	CPUInfo     []cpu.InfoStat         `json:"cpu_info,omitempty"`
+	CPUTimes    []cpu.TimesStat        `json:"cpu_times,omitempty"`
+	Mem         *mem.VirtualMemoryStat `json:"mem,omitempty"`
+	Disk        *disk.UsageStat        `json:"disk,omitempty"`
+	WorkerStats []*WorkerStats         `json:"worker_stats,omitempty"`
+}
+
+// WorkerStats represent the state of a worker to be monitored by the server
+type WorkerStats struct {
+	GPUStats    *DeviceSnapshot `json:"gpu_stats,omitempty"`
+	DockerStats *types.Stats    `json:"docker_stats,omitempty"`
+	DockerDisk  *DockerDisk     `json:"docker_disk,omitempty"`
+}
+
+// DockerDisk represents the disk usage of a worker to be monitored by the server
+type DockerDisk struct {
+	SizeRw        int64  `json:"size_rw,omitempty"`
+	SizeRootFs    int64  `json:"size_root_fs,omitempty"`
+	SizeDataDir   uint64 `json:"data_folder,omitempty"`
+	SizeOutputDir uint64 `json:"output_folder,omitempty"`
+}
 
 // DeviceSnapshot holds data collected about the mining GPU
 type DeviceSnapshot struct {
