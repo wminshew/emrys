@@ -19,6 +19,7 @@ type MinerStats struct {
 
 // WorkerStats represent the state of a worker to be monitored by the server
 type WorkerStats struct {
+	JobID       uuid.UUID       `json:"job_id,omitempty"`
 	GPUStats    *DeviceSnapshot `json:"gpu_stats,omitempty"`
 	DockerStats *types.Stats    `json:"docker_stats,omitempty"`
 	DockerDisk  *DockerDisk     `json:"docker_disk,omitempty"`
