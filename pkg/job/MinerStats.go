@@ -27,10 +27,10 @@ type WorkerStats struct {
 
 // DockerDisk represents the disk usage of a worker to be monitored by the server
 type DockerDisk struct {
-	SizeRw        int64  `json:"size_rw,omitempty"`
-	SizeRootFs    int64  `json:"size_root_fs,omitempty"`
-	SizeDataDir   uint64 `json:"data_folder,omitempty"`
-	SizeOutputDir uint64 `json:"output_folder,omitempty"`
+	SizeRw        int64 `json:"size_rw,omitempty"`
+	SizeRootFs    int64 `json:"size_root_fs,omitempty"`
+	SizeDataDir   int64 `json:"data_folder,omitempty"`
+	SizeOutputDir int64 `json:"output_folder,omitempty"`
 }
 
 // DeviceSnapshot holds data collected about the mining GPU
