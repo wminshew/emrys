@@ -2,7 +2,25 @@
 
 
 [[projects]]
-  name = "docker.io/go-docker"
+  name = "github.com/StackExchange/wmi"
+  packages = ["."]
+  revision = "5d049714c4a64225c3c79a7cf7d02f7fb5b96338"
+  version = "1.0.0"
+
+[[projects]]
+  name = "github.com/dgrijalva/jwt-go"
+  packages = ["."]
+  revision = "06ea1031745cb8b3dab3f6a236daf2b0aa468b7e"
+  version = "v3.2.0"
+
+[[projects]]
+  name = "github.com/docker/distribution"
+  packages = ["registry/api/errcode"]
+  revision = "2461543d988979529609e8cb6fca9ca190dc48da"
+  version = "v2.7.1"
+
+[[projects]]
+  name = "github.com/docker/docker"
   packages = [
     "api/types",
     "api/types/blkiodev",
@@ -14,22 +32,12 @@
     "api/types/strslice",
     "api/types/swarm",
     "api/types/swarm/runtime",
-    "api/types/versions"
+    "api/types/versions",
+    "errdefs"
   ]
-  revision = "b3f5b5de7bbce0acc6a7fc0a4c2b88db678e262e"
-  version = "v1.0.0"
-
-[[projects]]
-  name = "github.com/StackExchange/wmi"
-  packages = ["."]
-  revision = "5d049714c4a64225c3c79a7cf7d02f7fb5b96338"
-  version = "1.0.0"
-
-[[projects]]
-  name = "github.com/dgrijalva/jwt-go"
-  packages = ["."]
-  revision = "06ea1031745cb8b3dab3f6a236daf2b0aa468b7e"
-  version = "v3.2.0"
+  revision = "fa8dd90ceb7bcb9d554d27e0b9087ab83e54bd2b"
+  source = "https://github.com/docker/engine"
+  version = "v19.03.1"
 
 [[projects]]
   name = "github.com/docker/go-connections"
@@ -59,6 +67,24 @@
   version = "v0.4"
 
 [[projects]]
+  name = "github.com/golang/protobuf"
+  packages = [
+    "proto",
+    "ptypes",
+    "ptypes/any",
+    "ptypes/duration",
+    "ptypes/timestamp"
+  ]
+  revision = "6c65a5562fc06764971b7c5d05c76c75e84bdbf7"
+  version = "v1.3.2"
+
+[[projects]]
+  name = "github.com/konsorten/go-windows-terminal-sequences"
+  packages = ["."]
+  revision = "f55edac94c9bbba5d6182a4be46d86a2c9b5b50e"
+  version = "v1.0.2"
+
+[[projects]]
   name = "github.com/opencontainers/go-digest"
   packages = ["."]
   revision = "279bed98673dd5bef374d3b6e4b09e2af76183bf"
@@ -82,7 +108,6 @@
 [[projects]]
   name = "github.com/shirou/gopsutil"
   packages = [
-    ".",
     "cpu",
     "disk",
     "internal/common",
@@ -90,6 +115,12 @@
   ]
   revision = "2cbc9195c892b304060269ef280375236d2fcac9"
   version = "v2.19.03"
+
+[[projects]]
+  name = "github.com/sirupsen/logrus"
+  packages = ["."]
+  revision = "839c75faf7f98a33d445d181f3018b5c3409a45e"
+  version = "v1.4.2"
 
 [[projects]]
   branch = "master"
@@ -100,9 +131,27 @@
   ]
   revision = "81d4e9dc473e5e8c933f2aaeba2a3d81efb9aed2"
 
+[[projects]]
+  branch = "master"
+  name = "google.golang.org/genproto"
+  packages = ["googleapis/rpc/status"]
+  revision = "c506a9f9061087022822e8da603a52fc387115a8"
+
+[[projects]]
+  name = "google.golang.org/grpc"
+  packages = [
+    "codes",
+    "connectivity",
+    "grpclog",
+    "internal",
+    "status"
+  ]
+  revision = "045159ad57f3781d409358e3ade910a018c16b30"
+  version = "v1.22.1"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "0137b16753f6ea4a04eedf9360eae992ce3f7bf801db59cc2a9c97f193aba958"
+  inputs-digest = "105ca6c0d543bc9f3faaddb4756bbe30f58dc1d9450eb0b2d49c7bc4e1bf074f"
   solver-name = "gps-cdcl"
   solver-version = 1

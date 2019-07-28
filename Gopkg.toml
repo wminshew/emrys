@@ -40,3 +40,8 @@
 [[constraint]]
   name = "github.com/shirou/gopsutil"
   version = "2.19.3"
+
+[[override]]
+  name = "github.com/docker/docker"
+  source = "https://github.com/docker/engine"
+  branch = "19.03"

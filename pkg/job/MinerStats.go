@@ -1,7 +1,7 @@
 package job
 
 import (
-	"docker.io/go-docker/api/types"
+	"github.com/docker/docker/api/types"
 	"github.com/satori/go.uuid"
 	"github.com/shirou/gopsutil/cpu"
 	"github.com/shirou/gopsutil/disk"
